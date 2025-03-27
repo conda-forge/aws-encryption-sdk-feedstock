@@ -1,13 +1,13 @@
 {% set name = "aws-encryption-sdk" %}
-{% set version = "3.1.1" %}
+{% set version = "4.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aws-encryption-sdk-{{ version }}.tar.gz
-  sha256: 8d5fbf018fc68d6b1cacbe4dd037fd805296c7736a9fe457eb684d053f7f9563
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aws-encryption-sdk-{{ version }}.tar.gz
+  sha256: 7320dc4cf8d8d5a9b4c88a343be93835da18756e05308d3536554be0ca2889a5
 
 build:
   noarch: python
