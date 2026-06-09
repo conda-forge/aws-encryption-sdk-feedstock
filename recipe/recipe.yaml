@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  version: "4.0.6"
+
+package:
+  name: aws-encryption-sdk
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/a/aws-encryption-sdk/aws_encryption_sdk-${{ version }}.tar.gz
+  sha256: ec03bfa2df64ef21417bd6ff749bb63e84149586a4f7fbe528ec6b443326ea9e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - boto3 >=1.10.0
+    - cryptography >=3.4.6
+    - attrs >=17.4.0
+    - wrapt >=1.10.11
+
+tests:
+  - python:
+      imports:
+        - aws_encryption_sdk
+      pip_check: true
+      python_version:
+        - '*'
+        - ${{ python_min }}.*
+
+about:
+  summary: AWS Encryption SDK implementation for Python
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/aws/aws-encryption-sdk-python
+
+extra:
+  recipe-maintainers:
+    - cedriccuypers
+    - xhochy
