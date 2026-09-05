@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.0.6"
+  version: "4.0.7"
 
 package:
   name: aws-encryption-sdk
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/aws-encryption-sdk/aws_encryption_sdk-${{ version }}.tar.gz
-  sha256: ec03bfa2df64ef21417bd6ff749bb63e84149586a4f7fbe528ec6b443326ea9e
+  sha256: 3fa7d2e799f34e841e31aed3d725054bdcdda7b1578066d0a9b7c65bd192e594
 
 build:
   number: 0
